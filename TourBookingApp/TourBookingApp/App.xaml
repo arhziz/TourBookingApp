@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application
+    x:Class="TourBookingApp.App"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit">
+    <!--
+        Define global resources and styles here, that apply to all pages in your app.
+    -->
+    <Application.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Secondary">#232323</Color>
+            <Color x:Key="Primary">#F1F1F1</Color>
+            <Color x:Key="Tertiary">#3d9d9a</Color>
+
+            <Style x:Key="NameLabel" TargetType="Label">
+                <Setter Property="FontFamily" Value="MontserratSemiBold" />
+                <Setter Property="FontSize" Value="18" />
+                <Setter Property="TextColor" Value="{StaticResource Secondary}" />
+            </Style>
+
+            <Style x:Key="NameLabelMedium" TargetType="Label">
+                <Setter Property="FontFamily" Value="MontserratMedium" />
+                <Setter Property="FontSize" Value="15" />
+                <Setter Property="TextColor" Value="{StaticResource Secondary}" />
+            </Style>
+
+            <Style x:Key="NameLabelRegular" TargetType="Label">
+                <Setter Property="FontFamily" Value="MontserratRegular" />
+                <Setter Property="FontSize" Value="15" />
+                <Setter Property="TextColor" Value="Gray" />
+            </Style>
+
+            <Style x:Key="TitleLabel" TargetType="Label">
+                <Setter Property="FontFamily" Value="MontserratSemiBold" />
+                <Setter Property="FontSize" Value="20" />
+                <Setter Property="TextColor" Value="{StaticResource Secondary}" />
+            </Style>
+
+            <Style x:Key="TitleLabelLight" TargetType="Label">
+                <Setter Property="FontFamily" Value="MontserratMedium" />
+                <Setter Property="FontSize" Value="26" />
+                <Setter Property="TextColor" Value="{StaticResource Primary}" />
+            </Style>
+            <Style x:Key="IconButon" TargetType="Button">
+                <Setter Property="Margin" Value="2,0,0,0" />
+                <Setter Property="Padding" Value="0,0" />
+                <Setter Property="xct:ShadowEffect.Color" Value="{StaticResource Tertiary}" />
+                <Setter Property="xct:ShadowEffect.OffsetY" Value="6" />
+                <Setter Property="xct:ShadowEffect.Radius" Value="3" />
+                <Setter Property="BackgroundColor" Value="White" />
+                <Setter Property="CornerRadius" Value="40" />
+                <Setter Property="HeightRequest" Value="30" />
+                <Setter Property="WidthRequest" Value="30" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="TextColor" Value="{StaticResource Tertiary}" />
+                <Setter Property="VerticalOptions" Value="Center" />
+            </Style>
+            <Style x:Key="IconButonCaro" TargetType="Button">
+                <Setter Property="Margin" Value="2,0,0,0" />
+                <Setter Property="Padding" Value="0,0" />
+
+                <Setter Property="BackgroundColor" Value="White" />
+                <Setter Property="CornerRadius" Value="40" />
+                <Setter Property="HeightRequest" Value="30" />
+                <Setter Property="WidthRequest" Value="30" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="TextColor" Value="{StaticResource Tertiary}" />
+                <Setter Property="VerticalOptions" Value="Center" />
+            </Style>
+
+            <Style x:Key="IconButonTab" TargetType="Button">
+                <Setter Property="Margin" Value="2,0,0,0" />
+                <Setter Property="Padding" Value="0,0" />
+
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="CornerRadius" Value="40" />
+                <Setter Property="HeightRequest" Value="35" />
+                <Setter Property="WidthRequest" Value="35" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="TextColor" Value="{StaticResource Primary}" />
+                <Setter Property="VerticalOptions" Value="Center" />
+            </Style>
+            <Style
+                x:Key="ActivTebBtn"
+                BasedOn="{StaticResource IconButonTab}"
+                TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{StaticResource Primary}" />
+                <Setter Property="Opacity" Value="0.5" />
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

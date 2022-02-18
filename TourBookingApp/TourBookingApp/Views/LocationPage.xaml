@@ -1,0 +1,333 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="TourBookingApp.Views.LocationPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:mod="clr-namespace:TourBookingApp.Models"
+    xmlns:pv="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+    xmlns:vm="clr-namespace:TourBookingApp.ViewModels"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+    BackgroundColor="{StaticResource Primary}"
+    Shell.NavBarIsVisible="False">
+    <ContentPage.BindingContext>
+        <mod:PlaceItem />
+    </ContentPage.BindingContext>
+    <ScrollView>
+
+
+        <Grid RowDefinitions="*,*">
+            <pv:PancakeView Margin="0,0,0,30" CornerRadius="0,0,30,30">
+                <Image Aspect="AspectFill" Source="{Binding Images[0]}" />
+            </pv:PancakeView>
+            <Grid RowDefinitions="Auto,*,Auto">
+                <Grid Margin="15">
+
+                    <pv:PancakeView
+                        Padding="2"
+                        BackgroundColor="White"
+                        CornerRadius="40"
+                        HorizontalOptions="Start"
+                        WidthRequest="36">
+                        <Button
+                            Margin="3,2"
+                            Clicked="BackButtonClicked"
+                            HorizontalOptions="Start"
+                            Style="{StaticResource IconButon}"
+                            VerticalOptions="Start">
+                            <Button.ImageSource>
+                                <FontImageSource
+                                    FontFamily="Material"
+                                    Glyph="&#xe408;"
+                                    Size="17"
+                                    Color="{StaticResource Tertiary}" />
+                            </Button.ImageSource>
+
+                        </Button>
+                    </pv:PancakeView>
+
+
+                    <pv:PancakeView
+                        Grid.Column="1"
+                        Padding="2"
+                        BackgroundColor="White"
+                        CornerRadius="40"
+                        HorizontalOptions="End"
+                        VerticalOptions="Start">
+                        <Button
+                            Grid.Column="1"
+                            Margin="3,2"
+                            HorizontalOptions="End"
+                            Style="{StaticResource IconButon}"
+                            VerticalOptions="Start">
+                            <Button.ImageSource>
+                                <FontImageSource
+                                    FontFamily="Material"
+                                    Glyph="&#xe87e;"
+                                    Size="17"
+                                    Color="{StaticResource Tertiary}" />
+                            </Button.ImageSource>
+
+                        </Button>
+                    </pv:PancakeView>
+
+                </Grid>
+                <Grid
+                    Grid.Row="1"
+                    Padding="15,5,15,5"
+                    RowDefinitions="Auto,Auto">
+                    <Label
+                        HorizontalOptions="Start"
+                        Style="{StaticResource TitleLabelLight}"
+                        Text="{Binding Name}"
+                        WidthRequest="200" />
+
+                    <pv:PancakeView
+                        Grid.Row="1"
+                        Padding="15,0"
+                        BackgroundColor="{StaticResource Primary}"
+                        CornerRadius="13"
+                        HeightRequest="40"
+                        HorizontalOptions="Start">
+                        <StackLayout Orientation="Horizontal">
+                            <Label
+                                FontFamily="Material"
+                                FontSize="14"
+                                Text="&#xe8b4;"
+                                TextColor="{StaticResource Tertiary}"
+                                VerticalTextAlignment="Center" />
+                            <Label
+                                FontFamily="MontserratRegular"
+                                FontSize="13"
+                                Text="{Binding Location}"
+                                TextColor="{StaticResource Secondary}"
+                                VerticalOptions="Center" />
+                        </StackLayout>
+                    </pv:PancakeView>
+                </Grid>
+                <pv:PancakeView
+                    Grid.Row="2"
+                    Margin="15,0"
+                    Padding="10"
+                    xct:ShadowEffect.Color="Black"
+                    xct:ShadowEffect.Opacity="0.5"
+                    BackgroundColor="#CCffffff"
+                    CornerRadius="10">
+                    <Grid RowDefinitions="Auto,Auto">
+                        <Label Style="{StaticResource NameLabelMedium}" Text="Gallery" />
+
+                        <StackLayout
+                            Padding="0,5,15,5"
+                            HorizontalOptions="End"
+                            Orientation="Horizontal"
+                            Spacing="2">
+                            <Label
+                                FontSize="14"
+                                Style="{StaticResource NameLabelRegular}"
+                                Text="See all"
+                                VerticalTextAlignment="Center" />
+                            <Label
+                                Margin="0,2,0,0"
+                                FontFamily="Material"
+                                FontSize="15"
+                                Text="&#xe8e4;"
+                                TextColor="Gray"
+                                VerticalTextAlignment="Center" />
+                        </StackLayout>
+
+                        <Grid
+                            Grid.Row="1"
+                            ColumnDefinitions="Auto,Auto,Auto"
+                            ColumnSpacing="10"
+                            HorizontalOptions="Center">
+                            <pv:PancakeView
+                                CornerRadius="10"
+                                HeightRequest="100"
+                                HorizontalOptions="Start"
+                                WidthRequest="100">
+                                <Image Aspect="AspectFill" Source="{Binding Images[1]}" />
+                            </pv:PancakeView>
+
+                            <pv:PancakeView
+                                Grid.Column="1"
+                                CornerRadius="10"
+                                HeightRequest="100"
+                                HorizontalOptions="Start"
+                                WidthRequest="100">
+                                <Image Aspect="AspectFill" Source="{Binding Images[2]}" />
+                            </pv:PancakeView>
+                            <pv:PancakeView
+                                Grid.Column="2"
+                                CornerRadius="10"
+                                HeightRequest="100"
+                                HorizontalOptions="Start"
+                                WidthRequest="100">
+                                <Image Aspect="AspectFill" Source="{Binding Images[3]}" />
+                            </pv:PancakeView>
+                        </Grid>
+                    </Grid>
+                </pv:PancakeView>
+            </Grid>
+            <Grid Grid.Row="1" RowDefinitions="Auto,*,Auto">
+                <StackLayout
+                    Margin="15"
+                    HorizontalOptions="Center"
+                    Orientation="Horizontal"
+                    Spacing="20">
+                    <pv:PancakeView
+                        Padding="20,10"
+                        BackgroundColor="#ffffff"
+                        CornerRadius="10"
+                        HorizontalOptions="Center">
+                        <StackLayout Spacing="3" VerticalOptions="Center">
+                            <StackLayout
+                                HorizontalOptions="Start"
+                                Orientation="Horizontal"
+                                VerticalOptions="Start">
+                                <Label
+                                    FontFamily="Material"
+                                    FontSize="18"
+                                    Text="&#xe838;"
+                                    TextColor="Gold" />
+                                <Label
+                                    FontFamily="MontserratMedium"
+                                    FontSize="15"
+                                    Text="{Binding Ratings}"
+                                    TextColor="{StaticResource Secondary}"
+                                    VerticalTextAlignment="Start" />
+                            </StackLayout>
+                            <Label
+                                x:Name="ReviewsLabel"
+                                FontFamily="MontserratRegular"
+                                FontSize="11"
+                                Text="{Binding Reviews}"
+                                TextColor="{StaticResource Secondary}" />
+                        </StackLayout>
+                    </pv:PancakeView>
+
+                    <pv:PancakeView
+                        Padding="20,10"
+                        BackgroundColor="#ffffff"
+                        CornerRadius="10"
+                        HorizontalOptions="Center">
+                        <StackLayout Spacing="3" VerticalOptions="Center">
+                            <StackLayout
+                                HorizontalOptions="Start"
+                                Orientation="Horizontal"
+                                VerticalOptions="Start">
+                                <Label
+                                    FontFamily="Material"
+                                    FontSize="18"
+                                    Text="&#xe2c2;"
+                                    TextColor="LightBlue" />
+                                <Label
+                                    x:Name="TempLabel"
+                                    FontFamily="MontserratMedium"
+                                    FontSize="15"
+                                    Text="{Binding Temperature}"
+                                    TextColor="{StaticResource Secondary}"
+                                    VerticalTextAlignment="Start" />
+                            </StackLayout>
+                            <Label
+                                FontFamily="MontserratRegular"
+                                FontSize="11"
+                                Text="Cloudy"
+                                TextColor="{StaticResource Secondary}" />
+                        </StackLayout>
+                    </pv:PancakeView>
+
+                    <pv:PancakeView
+                        Padding="20,10"
+                        BackgroundColor="#ffffff"
+                        CornerRadius="10"
+                        HorizontalOptions="Center">
+                        <StackLayout Spacing="3" VerticalOptions="Center">
+                            <StackLayout
+                                HorizontalOptions="Start"
+                                Orientation="Horizontal"
+                                VerticalOptions="Start">
+                                <Label
+                                    FontFamily="Material"
+                                    FontSize="18"
+                                    Text="&#xe227;"
+                                    TextColor="LightBlue" />
+                                <Label
+                                    FontFamily="MontserratMedium"
+                                    FontSize="15"
+                                    Text="{Binding AvgPrice}"
+                                    TextColor="{StaticResource Secondary}"
+                                    VerticalTextAlignment="Start" />
+                            </StackLayout>
+                            <Label
+                                FontFamily="MontserratRegular"
+                                FontSize="11"
+                                Text="Avg. Price"
+                                TextColor="{StaticResource Secondary}" />
+                        </StackLayout>
+                    </pv:PancakeView>
+                </StackLayout>
+                <StackLayout
+                    Grid.Row="1"
+                    Margin="15,0"
+                    BindableLayout.ItemsSource="{Binding PlaceDesc}"
+                    Spacing="13">
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate>
+                            <Label
+                                FontFamily="MontserratRegular"
+                                FontSize="13"
+                                Text="{Binding}"
+                                TextColor="Black" />
+
+
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+
+                </StackLayout>
+                <Grid
+                    Grid.Row="2"
+                    Margin="15,0"
+                    Padding="0,10"
+                    ColumnDefinitions="3*,7*">
+                    <pv:PancakeView
+                        Padding="10"
+                        BackgroundColor="{StaticResource Tertiary}"
+                        CornerRadius="7">
+                        <Label
+                            FontFamily="MontserratSemiBold"
+                            FontSize="15"
+                            HorizontalOptions="Center"
+                            Text="Map"
+                            TextColor="{StaticResource Primary}"
+                            VerticalOptions="Center" />
+                    </pv:PancakeView>
+
+                    <pv:PancakeView
+                        Grid.Column="1"
+                        Padding="10"
+                        BackgroundColor="{StaticResource Secondary}"
+                        CornerRadius="7">
+                        <Grid>
+                            <Label
+                                FontFamily="MontserratSemiBold"
+                                FontSize="15"
+                                HorizontalOptions="Center"
+                                Text="Book Now"
+                                TextColor="{StaticResource Primary}"
+                                VerticalOptions="Center" />
+                            <Label
+                                FontFamily="Material"
+                                FontSize="25"
+                                HorizontalOptions="End"
+                                Text="&#xe941;"
+                                TextColor="{StaticResource Primary}"
+                                VerticalOptions="Center" />
+                        </Grid>
+
+
+                    </pv:PancakeView>
+
+                </Grid>
+            </Grid>
+        </Grid>
+    </ScrollView>
+</ContentPage>

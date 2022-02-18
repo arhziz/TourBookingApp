@@ -1,0 +1,367 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="TourBookingApp.Views.HomePage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:circleimage="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+    xmlns:controls="clr-namespace:TourBookingApp.Controls"
+    xmlns:effect="clr-namespace:TourBookingApp.CustomRenderers"
+    xmlns:pv="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+    xmlns:vm="clr-namespace:TourBookingApp.ViewModels"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+    BackgroundColor="{StaticResource Primary}"
+    Shell.NavBarIsVisible="False">
+    <ContentPage.BindingContext>
+        <vm:HomePageViewModel />
+    </ContentPage.BindingContext>
+    <Grid
+        Margin="0"
+        Padding="0"
+        RowDefinitions="Auto,Auto,Auto,*,Auto">
+        <Grid
+            Margin="0,20,0,0"
+            Padding="15"
+            ColumnDefinitions="9*,1*">
+            <StackLayout Orientation="Horizontal" Spacing="10">
+                <circleimage:CircleImage
+                    Aspect="AspectFill"
+                    HeightRequest="40"
+                    Source="https://www.himalmag.com/wp-content/uploads/2019/07/sample-profile-picture.png"
+                    VerticalOptions="Center"
+                    WidthRequest="40" />
+                <Label
+                    Style="{StaticResource NameLabel}"
+                    Text="Hi, Kate!"
+                    VerticalOptions="Center" />
+            </StackLayout>
+
+            <pv:PancakeView
+                Grid.Column="1"
+                Padding="3"
+                BackgroundColor="White"
+                CornerRadius="40"
+                HorizontalOptions="Center"
+                VerticalOptions="Center">
+                <Button Margin="0" Style="{StaticResource IconButon}">
+                    <Button.ImageSource>
+                        <FontImageSource
+                            FontFamily="Material"
+                            Glyph="&#xe8b8;"
+                            Size="17"
+                            Color="{StaticResource Tertiary}" />
+                    </Button.ImageSource>
+
+                </Button>
+            </pv:PancakeView>
+
+
+        </Grid>
+        <Grid Grid.Row="1" Padding="15">
+            <Grid RowDefinitions="Auto,Auto" RowSpacing="20">
+                <Label Style="{StaticResource TitleLabel}" Text="Where do you like to go?" />
+
+
+                <pv:PancakeView
+                    Grid.Row="1"
+                    Padding="0"
+                    xct:ShadowEffect.Color="Black"
+                    xct:ShadowEffect.OffsetX="0"
+                    xct:ShadowEffect.OffsetY="5"
+                    xct:ShadowEffect.Opacity="0.8"
+                    xct:ShadowEffect.Radius="10"
+                    BackgroundColor="White"
+                    CornerRadius="12"
+                    HeightRequest="45">
+                    <Grid>
+                        <Entry
+                            Margin="10,0"
+                            FontSize="17"
+                            HorizontalOptions="Fill"
+                            Placeholder="Search"
+                            PlaceholderColor="{StaticResource Secondary}"
+                            TextColor="{StaticResource Secondary}">
+                            <Entry.Effects>
+                                <effect:CustomEntry />
+                            </Entry.Effects>
+                        </Entry>
+                        <Button
+                            Margin="3,0"
+                            BackgroundColor="{StaticResource Secondary}"
+                            CornerRadius="12"
+                            HeightRequest="35"
+                            HorizontalOptions="End"
+                            TabIndex="100"
+                            VerticalOptions="Center"
+                            WidthRequest="35">
+                            <Button.ImageSource>
+                                <FontImageSource
+                                    FontFamily="Material"
+                                    Glyph="&#xe8b6;"
+                                    Size="17"
+                                    Color="{StaticResource Primary}" />
+                            </Button.ImageSource>
+
+                        </Button>
+                    </Grid>
+
+                </pv:PancakeView>
+
+
+
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="2" Padding="15,5">
+            <StackLayout>
+                <Label
+                    FontSize="16"
+                    Style="{StaticResource NameLabel}"
+                    Text="Categories" />
+
+                <ScrollView
+                    Margin="0"
+                    Padding="0"
+                    HeightRequest="50"
+                    Orientation="Horizontal"
+                    VerticalOptions="Start">
+                    <StackLayout Orientation="Horizontal" Spacing="7">
+                        <pv:PancakeView
+                            Padding="10"
+                            xct:ShadowEffect.Color="Black"
+                            xct:ShadowEffect.OffsetX="2"
+                            xct:ShadowEffect.OffsetY="5"
+                            xct:ShadowEffect.Opacity="0.3"
+                            xct:ShadowEffect.Radius="7"
+                            BackgroundColor="White"
+                            CornerRadius="14"
+                            HorizontalOptions="Start"
+                            VerticalOptions="Center">
+                            <StackLayout Orientation="Horizontal" Spacing="10">
+                                <Image
+                                    HeightRequest="15"
+                                    Source="beach"
+                                    WidthRequest="15" />
+                                <Label
+                                    FontFamily="MontserratSemiBold"
+                                    HorizontalOptions="Center"
+                                    Text="Beach"
+                                    TextColor="{StaticResource Secondary}"
+                                    VerticalOptions="Center" />
+                            </StackLayout>
+                        </pv:PancakeView>
+
+                        <pv:PancakeView
+                            Padding="10"
+                            BackgroundColor="White"
+                            CornerRadius="14"
+                            HorizontalOptions="Start"
+                            VerticalOptions="Center">
+                            <StackLayout Orientation="Horizontal" Spacing="10">
+                                <Image
+                                    HeightRequest="15"
+                                    Source="mountain"
+                                    WidthRequest="15" />
+                                <Label
+                                    FontFamily="MontserratRegular"
+                                    HorizontalOptions="Center"
+                                    Text="Mountain"
+                                    TextColor="{StaticResource Secondary}"
+                                    VerticalOptions="Center" />
+                            </StackLayout>
+                        </pv:PancakeView>
+
+                        <pv:PancakeView
+                            Padding="10"
+                            BackgroundColor="White"
+                            CornerRadius="14"
+                            HorizontalOptions="Start"
+                            VerticalOptions="Center">
+                            <StackLayout Orientation="Horizontal" Spacing="10">
+                                <Image
+                                    HeightRequest="15"
+                                    Source="camp"
+                                    WidthRequest="15" />
+                                <Label
+                                    FontFamily="MontserratRegular"
+                                    HorizontalOptions="Center"
+                                    Text="Camp"
+                                    TextColor="{StaticResource Secondary}"
+                                    VerticalOptions="Center" />
+                            </StackLayout>
+                        </pv:PancakeView>
+                        <pv:PancakeView
+                            Padding="10"
+                            BackgroundColor="White"
+                            CornerRadius="14"
+                            HorizontalOptions="Start"
+                            VerticalOptions="Center">
+                            <StackLayout Orientation="Horizontal" Spacing="10">
+                                <Image
+                                    HeightRequest="15"
+                                    Source="museum"
+                                    WidthRequest="15" />
+                                <Label
+                                    FontFamily="MontserratRegular"
+                                    HorizontalOptions="Center"
+                                    Text="Museum"
+                                    TextColor="{StaticResource Secondary}"
+                                    VerticalOptions="Center" />
+                            </StackLayout>
+                        </pv:PancakeView>
+                    </StackLayout>
+                </ScrollView>
+            </StackLayout>
+        </Grid>
+        <Grid
+            Grid.Row="3"
+            RowDefinitions="Auto,Auto"
+            RowSpacing="10">
+            <StackLayout
+                Padding="15,5,0,5"
+                HorizontalOptions="Start"
+                Orientation="Horizontal"
+                Spacing="0">
+                <Label
+                    FontSize="16"
+                    Style="{StaticResource NameLabel}"
+                    Text="Popular"
+                    VerticalTextAlignment="Center" />
+                <Label
+                    Margin="0,2,0,0"
+                    FontFamily="Material"
+                    FontSize="24"
+                    Text="&#xe5c5;"
+                    VerticalTextAlignment="Center" />
+            </StackLayout>
+            <StackLayout
+                Padding="0,5,15,5"
+                HorizontalOptions="End"
+                Orientation="Horizontal"
+                Spacing="2">
+                <Label
+                    FontSize="14"
+                    Style="{StaticResource NameLabelRegular}"
+                    Text="See all"
+                    VerticalTextAlignment="Center" />
+                <Label
+                    Margin="0,2,0,0"
+                    FontFamily="Material"
+                    FontSize="15"
+                    Text="&#xe8e4;"
+                    TextColor="Gray"
+                    VerticalTextAlignment="Center" />
+            </StackLayout>
+            <ScrollView
+                Grid.Row="1"
+                Padding="15,5"
+                Orientation="Horizontal">
+                <StackLayout
+                    BindableLayout.ItemsSource="{Binding PlaceItemViewModel.Places}"
+                    Orientation="Horizontal"
+                    Spacing="10">
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate>
+                            <controls:PlacesDisplay
+                                Name="{Binding Name}"
+                                Location="{Binding Location}"
+                                PlaceImage="{Binding Images[0]}"
+                                Ratings="{Binding Ratings}">
+                                <controls:PlacesDisplay.GestureRecognizers>
+                                    <TapGestureRecognizer CommandParameter="{Binding Id}" Tapped="PlacesTapped" />
+                                </controls:PlacesDisplay.GestureRecognizers>
+                            </controls:PlacesDisplay>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+
+
+                </StackLayout>
+            </ScrollView>
+        </Grid>
+
+        <Grid
+            Grid.Row="4"
+            Margin="0"
+            Padding="0"
+            ColumnDefinitions="*,*,*"
+            VerticalOptions="End">
+            <Path
+                Grid.ColumnSpan="3"
+                Margin="0,10,0,0"
+                Aspect="Fill"
+                Data="m188.06791,192.14606l488.00004,0l0,201.57282c-226.95917,81.91881 -259.02988,65.09383 -488.0299,14.7239l0.02986,-216.29671z"
+                Fill="{StaticResource Secondary}"
+                HeightRequest="111"
+                Rotation="180"
+                Stroke="{StaticResource Secondary}"
+                VerticalOptions="End" />
+            <!--<BoxView
+                Grid.Column="0"
+                Margin="3,0,0,0"
+                BackgroundColor="White"
+                CornerRadius="40"
+                HeightRequest="36"
+                HorizontalOptions="Center"
+                Opacity="0.3"
+                VerticalOptions="Center"
+                WidthRequest="36" />-->
+
+            <Button
+                Margin="0,0,0,0"
+                CornerRadius="40"
+                HeightRequest="40"
+                HorizontalOptions="Center"
+                TextColor="{StaticResource Primary}"
+                VerticalOptions="Center"
+                WidthRequest="40">
+
+                <Button.ImageSource>
+                    <FontImageSource
+                        FontFamily="Material"
+                        Glyph="&#xf201;"
+                        Size="21"
+                        Color="{StaticResource Primary}" />
+                </Button.ImageSource>
+                <Button.Background>
+                    <RadialGradientBrush>
+                        <GradientStop Offset="0.1" Color="#ffffff" />
+                        <GradientStop Offset="0.3" Color="#96ffffff" />
+                        <GradientStop Offset="0.5" Color="#64ffffff" />
+                        <GradientStop Offset="0.7" Color="#32ffffff" />
+                        <GradientStop Offset="1" Color="#00ffffff" />
+                    </RadialGradientBrush>
+                </Button.Background>
+            </Button>
+
+            <Button
+                Grid.Column="1"
+                HorizontalOptions="Center"
+                Style="{StaticResource IconButonTab}"
+                VerticalOptions="Center">
+                <Button.ImageSource>
+                    <FontImageSource
+                        FontFamily="Material"
+                        Glyph="&#xe87a;"
+                        Size="21"
+                        Color="{StaticResource Primary}" />
+                </Button.ImageSource>
+
+            </Button>
+
+            <Button
+                Grid.Column="2"
+                HorizontalOptions="Center"
+                Style="{StaticResource IconButonTab}"
+                VerticalOptions="Center">
+                <Button.ImageSource>
+                    <FontImageSource
+                        FontFamily="Material"
+                        Glyph="&#xe87e;"
+                        Size="21"
+                        Color="{StaticResource Primary}" />
+                </Button.ImageSource>
+
+            </Button>
+
+        </Grid>
+    </Grid>
+
+</ContentPage>

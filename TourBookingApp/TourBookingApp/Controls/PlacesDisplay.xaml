@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    x:Class="TourBookingApp.Controls.PlacesDisplay"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pv="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit">
+
+    <pv:PancakeView
+        BackgroundColor="Aquamarine"
+        CornerRadius="15"
+        HeightRequest="300"
+        HorizontalOptions="Start"
+        VerticalOptions="Fill"
+        WidthRequest="230">
+
+        <!--<pv:PancakeView.GestureRecognizers>
+            <TapGestureRecognizer Tapped="Location_Tapped" />
+        </pv:PancakeView.GestureRecognizers>-->
+        <Grid RowDefinitions="*,*">
+            <Image
+                x:Name="TheImage"
+                Grid.RowSpan="2"
+                Aspect="AspectFill"
+                HorizontalOptions="Center"
+                Scale="3"
+                Source="santamonic"
+                VerticalOptions="Center" />
+            <BoxView
+                Grid.RowSpan="2"
+                BackgroundColor="Black"
+                Opacity="0.1" />
+            <StackLayout
+                Margin="15"
+                HorizontalOptions="Start"
+                Orientation="Horizontal"
+                VerticalOptions="Start">
+                <Label
+                    FontFamily="Material"
+                    Text="&#xe838;"
+                    TextColor="{StaticResource Primary}" />
+                <Label
+                    x:Name="RatingLabel"
+                    FontFamily="MontserratRegular"
+                    FontSize="11"
+                    Text="4.8"
+                    TextColor="{StaticResource Primary}"
+                    VerticalTextAlignment="Start" />
+            </StackLayout>
+            <Button
+                Margin="15,13"
+                HorizontalOptions="End"
+                Style="{StaticResource IconButonCaro}"
+                VerticalOptions="Start">
+                <Button.ImageSource>
+                    <FontImageSource
+                        FontFamily="Material"
+                        Glyph="&#xe87e;"
+                        Size="17"
+                        Color="{StaticResource Tertiary}" />
+                </Button.ImageSource>
+            </Button>
+            <Grid
+                Grid.Row="1"
+                Margin="15"
+                VerticalOptions="End">
+
+                <pv:PancakeView
+                    BackgroundColor="White"
+                    CornerRadius="9"
+                    Opacity="0.7">
+                    <StackLayout Padding="5" Spacing="2">
+                        <Label
+                            x:Name="NameLabel"
+                            Margin="6,0"
+                            FontSize="13"
+                            HorizontalTextAlignment="Start"
+                            Style="{StaticResource NameLabel}"
+                            Text="Santa Monica State Beach" />
+                        <StackLayout
+                            Padding="4,0,6,2"
+                            Orientation="Horizontal"
+                            Spacing="3">
+                            <Label
+                                FontFamily="Material"
+                                Text="&#xe8b4;"
+                                TextColor="{StaticResource Tertiary}"
+                                VerticalTextAlignment="Center" />
+                            <Label
+                                x:Name="LocationLabel"
+                                FontFamily="MontserratRegular"
+                                FontSize="12"
+                                Text="USA, California"
+                                TextColor="{StaticResource Secondary}" />
+                        </StackLayout>
+                    </StackLayout>
+                </pv:PancakeView>
+
+            </Grid>
+        </Grid>
+    </pv:PancakeView>
+
+</ContentView>

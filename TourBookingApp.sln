@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32126.317
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TourBookingApp.Android", "TourBookingApp\TourBookingApp.Android\TourBookingApp.Android.csproj", "{6194D6D6-43C2-45CB-9F5B-A5D1EBCBADC6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TourBookingApp", "TourBookingApp\TourBookingApp\TourBookingApp.csproj", "{2057CAE4-089C-404D-8692-DC0576C4EFBE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6194D6D6-43C2-45CB-9F5B-A5D1EBCBADC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6194D6D6-43C2-45CB-9F5B-A5D1EBCBADC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6194D6D6-43C2-45CB-9F5B-A5D1EBCBADC6}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{6194D6D6-43C2-45CB-9F5B-A5D1EBCBADC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6194D6D6-43C2-45CB-9F5B-A5D1EBCBADC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6194D6D6-43C2-45CB-9F5B-A5D1EBCBADC6}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{2057CAE4-089C-404D-8692-DC0576C4EFBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2057CAE4-089C-404D-8692-DC0576C4EFBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2057CAE4-089C-404D-8692-DC0576C4EFBE}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{2057CAE4-089C-404D-8692-DC0576C4EFBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2057CAE4-089C-404D-8692-DC0576C4EFBE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2057CAE4-089C-404D-8692-DC0576C4EFBE}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6DBD472C-2187-461C-A8A0-28F2580E2DBC}
+	EndGlobalSection
+EndGlobal
