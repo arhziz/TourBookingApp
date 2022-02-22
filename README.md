@@ -6,5 +6,5 @@
 
 
 ## Info
-# This is a tour booking app ui for android 
+This is a tour booking app ui for android 
 # App Shots
