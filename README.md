@@ -8,7 +8,7 @@
 ## Info
 This is a tour booking app ui for android 
 # App Shots
-[![Page Design](https://res.cloudinary.com/speerr/image/upload/v1645567514/github/shot1_msuctr.png)]
+[![Page Design](https://res.cloudinary.com/speerr/image/upload/v1645567514/github/shot1_msuctr.png)
 
 All the designs I implement are intended to be for learning more about techniques to create beautiful Xamarin.Forms interfaces. 
 
