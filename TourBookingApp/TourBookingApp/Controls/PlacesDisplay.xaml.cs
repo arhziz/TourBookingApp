@@ -17,20 +17,6 @@ namespace TourBookingApp.Controls
             InitializeComponent();
         }
 
-        private void Location_Tapped(object sender, EventArgs e)
-        {
-
-            //PlacesDisplay SelectedLocation = (PlacesDisplay)sender;
-
-            
-            //Route to Location Page
-            var route = $"{nameof(LocationPage)}?LocationIndex=2";
-            Shell.Current.GoToAsync(route);
-        }
-
-
-
-
         #region Name
         public static readonly BindableProperty NameProperty = BindableProperty.Create(nameof(Name), typeof(string), typeof(PlacesDisplay), propertyChanged: (obj, old, newV) =>
         {
@@ -55,8 +41,6 @@ namespace TourBookingApp.Controls
             set => SetValue(NameProperty, value);
         }
         #endregion
-
-
 
 
         #region Location
@@ -85,8 +69,6 @@ namespace TourBookingApp.Controls
         #endregion
 
 
-
-
         #region Ratings
         public static readonly BindableProperty RatingsProperty = BindableProperty.Create(nameof(Ratings), typeof(double), typeof(PlacesDisplay), propertyChanged: (obj, old, newV) =>
         {
@@ -111,8 +93,6 @@ namespace TourBookingApp.Controls
             set => SetValue(RatingsProperty, value);
         }
         #endregion
-
-
 
 
         #region PlaceImage

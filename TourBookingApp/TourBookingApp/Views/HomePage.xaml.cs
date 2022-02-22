@@ -16,13 +16,5 @@ namespace TourBookingApp.Views
         {
             InitializeComponent();
         }
-
-        private void PlacesTapped(object sender, EventArgs e)
-        {
-            var TappedParrams = ((TappedEventArgs)e).Parameter;
-
-            var route = $"{nameof(LocationPage)}?LocationIndex={TappedParrams}";
-            Shell.Current.GoToAsync(route);
-        }
     }
 }
